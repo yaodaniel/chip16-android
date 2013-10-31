@@ -14,6 +14,16 @@ public class Cpu {
 	private Memory memory;
 
 	public void initCPU() {
+		//TODO
+	}
+
+	public void fetchOpcode() {
+		for (int i = 0; i < 4; i++) {
+			opcode[i] = memory.getByte(pc + i);
+		}
+	}
+
+	public void runInstruction() {
 		switch (opcode[0] >> 4) {
 		//MISC
 		case 0x0:
@@ -279,15 +289,5 @@ public class Cpu {
 				break;
 			}
 		}
-	}
-
-	public void fetchOpcode() {
-		for (int i = 0; i < 4; i++) {
-			opcode[i] = memory.getByte(pc + i);
-		}
-	}
-
-	public void runInstruction() {
-		// TODO
 	}
 }
