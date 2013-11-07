@@ -39,7 +39,7 @@ public class Cpu {
         return (opcode[3] << 8) & opcode[2];
     }
 
-    public void disassemble() {
+    public String disassemble() {
         String disas;
         switch (opcode[0] >> 4) {
             //MISC
@@ -325,6 +325,7 @@ public class Cpu {
         }
 
         //Print to screen
+        return disas;
     }
 
 	public void runInstruction() {
